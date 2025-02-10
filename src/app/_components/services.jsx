@@ -8,6 +8,7 @@ import {
   Syringe,
   CarTaxiFront,
   Hotel,
+  Clock,
 } from "lucide-react";
 import { WhatsappLogo } from "@phosphor-icons/react";
 
@@ -66,33 +67,40 @@ export function Services() {
   return (
     <section className="bg-white py-16">
       <div className="container mx-auto px-4">
-        <div>
-          <h2 className="text-4xl font-bold mb-12">Serviços</h2>
+        <h2 className="text-4xl font-bold mb-12">Serviços</h2>
 
-          <div className="relative">
-            <div className="overflow-hidden" ref={emblaRef}>
-              <div className="flex">
-                {services.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex-[0_0_100%] min-w-0 md:flex-[0_0_calc(100%/3)] px-3"
-                  >
-                    <article className="bg-[#1e293b] text-white rounded-2xl p-6 space-y-4 h-full flex flex-col">
-                      <div className="flex-1 flex items-start justify-between">
+        <div className="relative">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex">
+              {services.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex-[0_0_100%] min-w-0 md:flex-[0_0_calc(100%/3)] px-3"
+                >
+                  <article className="bg-[#1e293b] text-white rounded-2xl p-6 space-y-4 h-full flex flex-col">
+                    <div className="flex-1 flex items-start justify-between">
+                      <div className="flex gap-3">
+                        <span className="text-3xl font-bold">{item.icon}</span>
                         <div>
-                          <span className="text-3xl font-bold">
-                            {item.icon}
-                          </span>
-                          <div>
-                            <h3>{item.title}</h3>
-                            <p>{item.description}</p>
-                          </div>
+                          <h3 className="font-bold text-xl my-1">
+                            {item.title}
+                          </h3>
+                          <p className="text.gray-400 text-sm select-none">
+                            {item.description}
+                          </p>
                         </div>
                       </div>
-                    </article>
-                  </div>
-                ))}
-              </div>
+                    </div>
+
+                    <div className="border-t border-gray-700 pt-4 flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-sm">
+                        <Clock className="w-4 h-4" />
+                        <span>{item.duration}</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              ))}
             </div>
           </div>
         </div>
