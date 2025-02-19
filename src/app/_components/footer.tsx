@@ -1,9 +1,16 @@
+"use client";
+
 import golden from "../../../public/image/golden.png";
 import royal from "../../../public/image/royal.png";
 import primier from "../../../public/image/primier.png";
 import whiskas from "../../../public/image/whiskas.png";
 import natural from "../../../public/image/natural.png";
 import Image from "next/image";
+import {
+  FacebookLogo,
+  InstagramLogo,
+  YoutubeLogo,
+} from "@phosphor-icons/react/dist/ssr";
 
 const brands = [
   { name: "Royal Canin", logo: royal },
@@ -48,7 +55,34 @@ export function Footer() {
         <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 mt-5">
           <div>
             <h3 className="text-2xl font-semibold mb-2">Pet Shop Dev</h3>
-            <p>Cuidando do seu melhor amigo com amor e dedicação.</p>
+            <p className="mb-4">
+              Cuidando do seu melhor amigo com amor e dedicação.
+            </p>
+            <a href="#" className="bg-green-500 px-4 py-2 rounded-md">
+              Contato via WhatsApp
+            </a>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-semibold mb-2">Contatos</h3>
+            <p>Email: pet@shopdev.com</p>
+            <p>Telefone: (11) 99999-5676</p>
+            <p>Rua: Av. das Nações Unidas, 123 | SP</p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-semibold mb-2">Redes Sociais</h3>
+            <div className="flex gap-4">
+              <a href="#" target="_blank">
+                <FacebookLogo className="w-8 h-8" />
+              </a>
+              <a href="#" target="_blank">
+                <InstagramLogo className="w-8 h-8" />
+              </a>
+              <a href="#" target="_blank">
+                <YoutubeLogo className="w-8 h-8" />
+              </a>
+            </div>
           </div>
         </footer>
       </div>
