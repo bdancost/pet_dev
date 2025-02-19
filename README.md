@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🐾 Pet Shop Dev - Landing Page
 
-## Getting Started
+Bem-vindo ao repositório da Landing Page do **Pet Shop Dev**! Este projeto foi desenvolvido com **Next.js**, **React**, **Tailwind CSS** e utiliza **AOS (Animate On Scroll)** para animações.
 
-First, run the development server:
+## 🚀 Tecnologias Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js** - Framework React para aplicações modernas
+- **React** - Biblioteca para construção de interfaces
+- **Tailwind CSS** - Framework de estilização
+- **AOS (Animate On Scroll)** - Biblioteca de animação
+- **Lucide-react** e **Phosphor Icons** - Ícones personalizados
+- **Next/Image** - Otimização de imagens
+
+## 📂 Estrutura do Projeto
+
+```
+📁 src/
+ ├── _components/      # Componentes reutilizáveis
+ │   ├── hero.tsx      # Seção Hero
+ │   ├── about.tsx     # Seção Sobre
+ │   ├── services.tsx  # Seção Serviços
+ │   ├── testimonials.tsx # Seção Depoimentos
+ │   ├── footer.tsx    # Rodapé
+ │   ├── aos-init.tsx  # Inicialização de animações
+ │
+ ├── page.tsx          # Página principal
+ ├── layout.tsx        # Layout base da aplicação
+ ├── globals.css       # Estilização global
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📌 Passo a Passo do Código
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1️⃣ **Estrutura Base da Página**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+O arquivo **`page.tsx`** monta a página principal, importando e organizando os componentes principais.
 
-## Learn More
+```tsx
+export default function Home() {
+  return (
+    <main>
+      <Hero />
+      <About />
+      <Services />
+      <Testimonials />
+      <Footer />
+    </main>
+  );
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 2️⃣ **Configuração do Layout**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+No **`layout.tsx`**, configuramos a estrutura base da aplicação, incluindo metadados e fontes personalizadas:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```tsx
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className="antialiased">
+        {children}
+        <AosInit />
+      </body>
+    </html>
+  );
+}
+```
 
-## Deploy on Vercel
+### 3️⃣ **Seção "Sobre"**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+No **`about.tsx`**, utilizamos **Next/Image** para otimização de imagens e **Lucide-react** para ícones personalizados.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```tsx
+<ul className="space-y-4">
+  <li className="flex items-center gap-2">
+    <Check className="text-red-500" />
+    Aberto desde 2006.
+  </li>
+</ul>
+```
+
+### 4️⃣ **Animações com AOS**
+
+O **`aos-init.tsx`** inicializa o **AOS** para aplicar animações de rolagem:
+
+```tsx
+useEffect(() => {
+  Aos.init({ duration: 800, once: true });
+}, []);
+```
+
+### 5️⃣ **Rodapé com Marcas**
+
+O **`footer.tsx`** exibe marcas de produtos e links sociais com **Phosphor Icons**.
+
+```tsx
+<div className="flex gap-4">
+  <FacebookLogo className="w-8 h-8" />
+  <InstagramLogo className="w-8 h-8" />
+  <YoutubeLogo className="w-8 h-8" />
+</div>
+```
+
+## 🔧 Como Rodar o Projeto
+
+1. Clone o repositório:
+
+   ```sh
+   git clone https://github.com/bdancost/pet_dev.git
+   ```
+
+2. Instale as dependências:
+
+   ```sh
+   npm install
+   ```
+
+3. Execute o servidor de desenvolvimento:
+
+   ```sh
+   npm run dev
+   ```
+
+4. Acesse o projeto em `http://localhost:3000`
+
+## 🎨 Demonstração
+
+Feito com ❤️ para o seu pet! 🐶🐱
