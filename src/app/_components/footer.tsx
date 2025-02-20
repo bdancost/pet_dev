@@ -29,7 +29,12 @@ export function Footer() {
           <h4 className="text-3xl font-semibold mb-8 text-center">
             Marcas que trabalhamos
           </h4>
-          <div className="grid grid-cols-2 lg:grid-cols-6 gap-8">
+          <div
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
+            className="grid grid-cols-2 lg:grid-cols-6 gap-8"
+          >
             {brands.map((item, index) => (
               <div
                 key={index}
