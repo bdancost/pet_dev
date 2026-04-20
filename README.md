@@ -104,28 +104,6 @@ O **`footer.tsx`** exibe marcas de produtos e links sociais com **Phosphor Icons
 </div>
 ```
 
-## 🔧 Como Rodar o Projeto
-
-1. Clone o repositório:
-
-   ```sh
-   git clone https://github.com/bdancost/pet_dev.git
-   ```
-
-2. Instale as dependências:
-
-   ```sh
-   npm install
-   ```
-
-3. Execute o servidor de desenvolvimento:
-
-   ```sh
-   npm run dev
-   ```
-
-4. Acesse o projeto em `http://localhost:3000`
-
 ## 🎨 Demonstração
 
 Feito com ❤️ para o seu pet! 🐶🐱
