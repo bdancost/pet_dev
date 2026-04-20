@@ -104,6 +104,4 @@ O **`footer.tsx`** exibe marcas de produtos e links sociais com **Phosphor Icons
 </div>
 ```
 
-## 🎨 Demonstração
-
 Feito com ❤️ para o seu pet! 🐶🐱
